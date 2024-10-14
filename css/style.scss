@@ -69,20 +69,36 @@ header {
     border-radius: 50px;
     background: #F1ECE6;
 
-    .reminder-question {
-      width: 402px;
+    #taskInput {
+      border: none;
+      outline: none;
+      width: 800px;
       height: 48px;
       margin-top: 15px;
       margin-left: 35px;
       font-size: 32px;
       font-weight: 400;
-      color: #969696;
-      text-align: center;
+      // color: #969696;
+      background: #F1ECE6;
+      text-align: left;
     }
 
-    .reminder-button {
+    // .reminder-question {
+    //   width: 402px;
+    //   height: 48px;
+    //   margin-top: 15px;
+    //   margin-left: 35px;
+    //   font-size: 32px;
+    //   font-weight: 400;
+    //   color: #969696;
+    //   text-align: center;
+    // }
+
+    #addTaskButton {
       width: 140px;
       height: 78px;
+      border: none;
+      cursor: grab;
       margin: 0;
       background: #76B7CD;
       font-size: 38px;
@@ -107,22 +123,24 @@ header {
   max-height: 589px;
   overflow-y: auto;
   background: #eadcca;
-  border-radius: 50px;  
-  padding: 0 25px; 
+  border-radius: 50px;
+  padding: 0 25px;
+
   &::-webkit-scrollbar {
-    width: 0; /* Для Chrome, Safari, Opera */
+    width: 0;
+    /* Для Chrome, Safari, Opera */
     background-color: transparent;
   }
-  }
+}
 
-  .task-status {
-    display: flex;
-    flex-direction: row;  
-    justify-content: center;
-    text-align: center;
-    // margin: 0 auto;
-    width: 945px;
-    height: 88px;
+.task-status {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  // margin: 0 auto;
+  width: 945px;
+  height: 88px;
 }
 
 .task-status::after {
@@ -141,7 +159,7 @@ header {
   width: 64px;
   height: 64px;
   top: 12px;
-  }
+}
 
 .delete-outline {
   width: 25px;
@@ -156,7 +174,7 @@ header {
   width: 304px;
   height: 100%;
   border-bottom: 2px solid blue;
-  margin: 0;  
+  margin: 0;
   font-size: 32px;
   font-weight: 400;
 }
@@ -172,9 +190,9 @@ header {
 .todo-item {
   position: relative;
   display: flex;
-  flex-direction: row;  
+  flex-direction: row;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
   // margin: o auto;
   // margin-left: 50px;
   width: 100%;
@@ -220,7 +238,7 @@ header {
   border-radius: 50%;
 }
 
-.checkbox:checked + .fake::before {
+.checkbox:checked+.fake::before {
   opacity: 1;
 }
 
@@ -259,5 +277,3 @@ header {
 //     // border-radius: 50%;
 //   } 
 // }
-  
-

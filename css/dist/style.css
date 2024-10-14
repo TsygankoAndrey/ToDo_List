@@ -66,19 +66,23 @@ header .logo-layout .logo {
   border-radius: 50px;
   background: #F1ECE6;
 }
-.add-to-do .add-to-do__input .reminder-question {
-  width: 402px;
+.add-to-do .add-to-do__input #taskInput {
+  border: none;
+  outline: none;
+  width: 800px;
   height: 48px;
   margin-top: 15px;
   margin-left: 35px;
   font-size: 32px;
   font-weight: 400;
-  color: #969696;
-  text-align: center;
+  background: #F1ECE6;
+  text-align: left;
 }
-.add-to-do .add-to-do__input .reminder-button {
+.add-to-do .add-to-do__input #addTaskButton {
   width: 140px;
   height: 78px;
+  border: none;
+  cursor: grab;
   margin: 0;
   background: #76B7CD;
   font-size: 38px;
@@ -104,7 +108,8 @@ header .logo-layout .logo {
   padding: 0 25px;
 }
 .task-block::-webkit-scrollbar {
-  width: 0; /* Для Chrome, Safari, Opera */
+  width: 0;
+  /* Для Chrome, Safari, Opera */
   background-color: transparent;
 }
 

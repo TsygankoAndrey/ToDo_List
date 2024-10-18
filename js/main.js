@@ -139,4 +139,65 @@ document.getElementById("addTaskButton").addEventListener("click", function () {
     alert("Нет доступных мест для добавления задачи!"); // Если нет пустых мест
 });
 
+// первый вариант удаления задачи
+
+// const todoList = document.getElementById("todo-list");
+
+// function addTodoItem(text) {
+//     const todoItem = document.createElement("div");
+//     todoItem.classList.add("todo-item");
+//     todoItem.innerHTML = `
+//       <span class="todo-text">${text}</span>
+//       <button class="delete-button">Delete</button>
+//     `;
+
+//     todoList.appendChild(todoItem);
+
+//     // Add event listener for deleting
+//     const deleteButton = todoItem.querySelector(".delete-outline");
+//     deleteButton.addEventListener('click', () => {
+//         todoList.removeChild(todoItem);
+//     })
+
+//     // Add event listener for marking as completed
+//     const todoText = todoItem.querySelector(".todo-text");
+//     todoText.addEventListener("click", () => {
+//         todoText.classList.toggle("completed");
+//     });
+// }
+
+
+// попробуем другой вариант
+
+const todoList = document.getElementById("todo-list");
+
+function addTodoItem(text) {
+    const todoItem = document.createElement("div");
+    todoItem.classList.add("todo-item");
+    // todoItem.innerHTML = `
+    //   <span class="todo-text">${text}</span>
+    //   <div class="delete-outline">🗑️</div> 
+    // `;
+
+    todoList.appendChild(todoItem);
+
+    // Add event listener for deleting
+    const deleteOutline = todoItem.querySelector(".delete-outline");
+    deleteOutline.addEventListener("click", () => {
+        const todoText = todoItem.querySelector(".todo-text");
+        if (todoText.classList.contains("completed")) {
+            // Remove the item
+            todoList.removeChild(todoItem);
+        } else {
+            // Display a message
+            alert("Complete the task first!");
+        }
+    });
+
+    // Add event listener for marking as completed
+    const todoText = todoItem.querySelector(".todo-text");
+    todoText.addEventListener("click", () => {
+        todoText.classList.toggle("completed");
+    });
+}
 

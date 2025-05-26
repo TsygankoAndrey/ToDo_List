@@ -1,66 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/dist/style.css">
-</head>
+    <script defer src="../js/main.js"></script>
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/dist/style.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="logo-layout">
-            <img class="logo" src="../img/To-Do-Logo 1.png" alt="Logo View">
-        </div>
-
+      <div class="logo-layout">
+        <img class="logo" src="../img/To-Do-Logo 1.png" alt="Logo View" />
+      </div>
     </header>
 
     <main>
-        <div class="task-type">
-            <div class="task-type__personal">
-                <h2 class="approach">Personal</h2>
-            </div>
-            <div class="task-type__professional">
-                <h2 class="approach">Professional</h2>
-            </div>
+      <div class="task-type">
+        <div class="task-type__personal">
+          <h2 class="approach">Personal</h2>
         </div>
-
-        <div class="add-to-do">
-            <div class="add-to-do__input">
-                <input type="text" id="taskInput" placeholder="What do you need to do?">
-                <!-- <h3 class="reminder-question">What do you need to do?</h3> -->
-                <button id="addTaskButton">ADD</button>
-                <!-- <h4 class="reminder-button">ADD</h4> -->
-            </div>
+        <div class="task-type__professional">
+          <h2 class="approach">Professional</h2>
         </div>
+      </div>
 
-        <div class="task-block">
-
+      <div class="add-to-do">
+        <div class="add-to-do__input">
+          <input
+            type="text"
+            id="taskInput"
+            placeholder="What do you need to do?"
+          />
+          <!-- <h3 class="reminder-question">What do you need to do?</h3> -->
+          <button id="addTaskButton">ADD</button>
+          <!-- <h4 class="reminder-button">ADD</h4> -->
         </div>
+      </div>
 
+      <div class="task-block"></div>
     </main>
 
-    <script src="../js/main.js"></script>
-
     <template id="todo-item">
+      <div class="todo-item">
+        <label class="label">
+          <input type="checkbox" class="checkbox" name="choice" />
+          <span class="fake"></span>
+        </label>
 
-        <div class="todo-item">
-
-            <label class="label">
-                <input type="checkbox" class="checkbox" name="choice">
-                <span class="fake"></span>
-            </label>
-
-            <h5 class="task-title"></h5>
-            <div class="delete-outline">
-                <img src="../img/Delete outline.png" alt="delete-bin">
-            </div>
-
+        <h5 class="task-title"></h5>
+        <div class="delete-outline">
+          <img src="../img/Delete outline.png" alt="delete-bin" />
         </div>
+      </div>
     </template>
 
-</body>
+    <!-- <div class="container w-50 pt-5">
+        <h1>Калькулятор</h1>
+        <input
+        type="number"
+        class="form-control mb-2"
+        placeholder="Введите 1 число"
+        id="input1"
+        value="10"
+        />
+        <input 
+        type="number"
+        class="form-control mb-2"
+        placeholder="Введите 2 число"
+        id="input2"
+        value="5"
+        />
+        <div class="d-flex mb-2">
+            <button class="btn btn-success flex-grow-1 mx-2" id="plus">+</button>
+            <button class="btn btn-danger flex-grow-1 mx-2" id="minus">-</button>
+            <button class="btn btn-outline-info w-100 mb-2" id="submit">Вычислить</button>
+        </div>
 
+        <div class="text-bg-light p-3 text-center">
+            <h4>Результат:</h4>
+            <p id="result" class="mb-0">49</p>
+        </div>
+    </div> -->
+  </body>
 </html>

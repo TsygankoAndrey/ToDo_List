@@ -1,3 +1,20 @@
+// === Variables ====
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+$screen-xxl : 1400px;
+
+$screen-xs-max: 575px;
+$screen-sm-max: 767px;
+$screen-md-max: 991px;
+$screen-lg-max: 1199px;
+$screen-xl-max: 1399px;
+
+.blue-text {
+  color: blue;
+}
+
 header {
   text-align: center;
   background: #F1ECE6;
@@ -63,54 +80,145 @@ header {
   .add-to-do__input {
     display: flex;
     justify-content: space-between;
-    width: 1040px;
+    width: 100%;
+    max-width: 1040px;
     height: 78px;
     text-align: center;
     border-radius: 50px;
     background: #F1ECE6;
+  }
 
-    #taskInput {
-      border: none;
-      outline: none;
-      width: 800px;
-      height: 48px;
-      margin-top: 15px;
-      margin-left: 35px;
-      font-size: 32px;
-      font-weight: 400;
-      // color: #969696;
-      background: #F1ECE6;
-      text-align: left;
-    }
+  #taskInput {
+    border: none;
+    outline: none;
+    width: 100%;
+    max-width: 800px;
+    height: 48px;
+    padding: 0 10px;
+    margin-top: 15px;
+    margin-left: 35px;
+    font-size: 32px;
+    font-weight: 400;
+    // color: #969696;
+    background: #F1ECE6;
+    text-align: left;
 
-    // .reminder-question {
-    //   width: 402px;
-    //   height: 48px;
-    //   margin-top: 15px;
-    //   margin-left: 35px;
-    //   font-size: 32px;
-    //   font-weight: 400;
-    //   color: #969696;
-    //   text-align: center;
+    // @media (max-width: $screen-xs-max) {
+    //   font-size: 16px;
+    //   // padding: 0 10px;
     // }
 
-    #addTaskButton {
-      width: 140px;
-      height: 78px;
-      border: none;
-      cursor: grab;
-      margin: 0;
-      background: #76B7CD;
-      font-size: 38px;
-      font-weight: 600;
-      color: #F3F3F3;
-      text-align: center;
-      line-height: 78px;
-      border-top-right-radius: 50px;
-      border-bottom-right-radius: 50px;
+    // @media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+    //   font-size: 20px;
+    //   // padding: 0 10px;
+    // }
+
+    @media (max-width: $screen-md-max) {
+      font-size: 28px;
+      // padding: 0 10px;
+    }
+
+    @media (min-width: $screen-lg) and (max-width: $screen-lg-max) {
+      font-size: 30px;
+      // padding: 0 10px;
     }
   }
+  #addTaskButton:hover{background: blue};
+
+  #addTaskButton {
+    width: auto;
+    height: 78px;
+    border: none;
+    cursor: grab;
+    margin: 0;
+    background: #76B7CD;
+    font-size: 38px;
+    font-weight: 600;
+    color: #F3F3F3;
+    text-align: center;
+    line-height: 78px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    padding: 0 20px;
+
+
+    @media (max-width: $screen-xs-max) {
+      font-size: 16px;
+      padding: 0 10px;
+    }
+
+    @media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+      font-size: 20px;
+      padding: 0 10px;
+    }
+
+    @media (min-width: $screen-md) and (max-width: $screen-md-max) {
+      font-size: 24px;
+      padding: 0 10px;
+    }
+
+    @media (min-width: $screen-lg) and (max-width: $screen-lg-max) {
+      font-size: 28px;
+      padding: 0 10px;
+    }
+  }
+
 }
+
+// Медиазапросы для адаптивности
+
+@media (max-width: $screen-xl) {
+  .add-to-do__input {
+    width: calc(100% - 20px);
+    margin: 0 10px 10px 10px;
+  }
+}
+
+@media (max-width: $screen-lg) {
+  .add-to-do__input {
+    width: calc(100% - 20px);
+    margin: 0 10px 10px 10px;
+  }
+}
+
+@media (max-width: $screen-md) {
+  .add-to-do {
+    flex-direction: column; // Изменение направления на мобильных устройствах
+    align-items: center; // Центрирование элементов
+    margin-left: 10px;
+    width: calc(100% - 20px);
+  }
+
+  .add-to-do__input {
+    width: 90%; // Ширина для мобильных устройств
+    margin-bottom: 10px; // Отступ снизу
+  }
+
+  #taskInput {
+    max-width: none; // Убираем максимальную ширину
+    width: calc(100% - 40px); // Учитываем отступы
+  }
+
+  // #addTaskButton {
+  //   width: 100%; // Кнопка занимает всю ширину на мобильных устройствах
+  //   line-height: normal; // Изменяем высоту строки для лучшего отображения
+  // }
+}
+
+@media (max-width: $screen-sm-max) {}
+
+@media (max-width: $screen-sm) {
+  #taskInput {
+    font-size: 14px; // Уменьшаем размер шрифта на очень маленьких экранах
+  }
+
+  // #addTaskButton {
+  //   padding: 0 10px; // Уменьшаем отступы
+  //   font-size: 14px; // Уменьшаем размер шрифта кнопки
+  // }
+}
+
+
 
 
 .task-block {
@@ -138,8 +246,7 @@ header {
   flex-direction: row;
   justify-content: center;
   text-align: center;
-  // margin: 0 auto;
-  width: 945px;
+  max-width: 945px;
   height: 88px;
 }
 
@@ -178,8 +285,6 @@ header {
   font-size: 32px;
   font-weight: 400;
 }
-
-
 
 .checked {
   color: grey;
@@ -276,4 +381,4 @@ header {
 //     transition: .2s;
 //     // border-radius: 50%;
 //   } 
-// }
+//
